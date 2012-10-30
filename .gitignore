@@ -1,0 +1,11 @@
+*#
+.*.sw?
+*.aux
+*.bak
+*.bm
+*.dvi
+*.fls
+*.log
+*.toc
+*.vrb
+*.*latexmk*
