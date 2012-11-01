@@ -1,10 +1,32 @@
-\documentclass[12pt,a4paper]{book}
+\documentclass[11pt,a5paper,twoside]{memoir}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \usepackage[svgnames]{xcolor}
-\usepackage{fancyhdr}
 \usepackage{pst-barcode}
 \usepackage{auto-pst-pdf}
+\usepackage{ifthen}
+\usepackage{everypage}
 \usepackage{enumitem}
+\usepackage{DejaVuSerif}
+\usepackage{DejaVuSans}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\chapterstyle{bianchi}
+\pagestyle{empty}
+
+\colorlet{pagenumbg}{black!70!white}
+\colorlet{pagenumfg}{white}
+
+\makeatletter
+\AddEverypageHook{%
+  \ifthenelse{\isodd{\value{page}}}%
+	{\rput[tl](\textwidth,0){%
+		\psframebox[fillstyle=solid,fillcolor=pagenumbg,linestyle=solid,linecolor=white,framesep=6pt,linearc=.5]{\color{pagenumfg}\Large\bfseries\sffamily\thepage\hspace*{2cm}}}%
+  }
+	{\rput[tr](0,0){%
+		\psframebox[fillstyle=solid,fillcolor=pagenumbg,linestyle=solid,linecolor=white,framesep=6pt,linearc=.5]{\color{pagenumfg}\Large\bfseries\sffamily\hspace*{2cm}\thepage}}%
+	}
+}
+\makeatother
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{document}
 
@@ -14,6 +36,7 @@
 % https://london.hackspace.org.uk
 
 \chapter{Welcome to London Hackspace}
+\colorlet{pagenumbg}{red!80!black}
 
 This is the largest hackspace in the UK, and you are free (and encouraged) to tinker and create using our tools and expertise.
 
@@ -188,7 +211,8 @@ Google Calendar (see the wiki for details) is our canonical list of events, but 
 
 
 
-\section{Keeping the Hackspace in Shape}
+\chapter{Keeping the Hackspace in Shape}
+\colorlet{pagenumbg}{blue!85!black}
 
 According to our rules you're expected to clean up your workspace after you're done. Beyond that we ask that you help us maintain the space. We have a lot of members that make constant use of our facilities, and it adds up quickly. A few good rules of thumb:
 
@@ -222,6 +246,7 @@ There should be a bin labelled in the space for recycling - please use it. Also,
 Most cleaning utensils can be found under the kitchen sink. (See also the "re-stocking supplies" section further below.) We have a small dishwasher next to the kitchen sink., and several vacuum cleaners which normally live in the workshop. Supplies are currently stored under the kitchen sink, and above the black fridge. If we run out of anything (e.g. kitchen gloves go quite quickly) it would be appreciated if you bought more. The Hackspace can reimburse you if needed - talk to a trustee about that.
 
 \chapter{Quick-reference QR codes}
+\colorlet{pagenumbg}{red!60!yellow!80!black}
 
 
 The main hackspace page
